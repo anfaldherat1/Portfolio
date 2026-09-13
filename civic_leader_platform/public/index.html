@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">آية الله محمد علي الفريحات</title>
+    <!-- Meta Descriptions for SEO -->
+    <meta
+      name="description"
+      content="هذا الموقع يمثل منصة لتوثيق ومتابعة العمل النيابي، من المداخلات والمواقف والأسئلة النيابية إلى اللجان والاجتماعات والزيارات والفعاليات المجتمعية."
+    />
+    <!-- FontAwesome & Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Header & Navigation -->
+    <header class="site-header">
+      <div class="nav-container">
+        <a
+          href="#home"
+          class="brand-logo active"
+          id="brand-home-btn"
+          onclick="switchPage('home')"
+          title="الرئيسية"
+          aria-label="الرئيسية"
+        >
+          <div class="logo-icon"><i class="fa-solid fa-landmark"></i></div>
+          <span class="brand-title-text">الرئيسية</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <nav>
+          <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item-p1">
+              <a href="#about" class="nav-link" onclick="switchPage('about')"
+                >عن النائب</a
+              >
+            </li>
+            <li class="nav-item-p2">
+              <a
+                href="#journey"
+                class="nav-link"
+                onclick="switchPage('journey')"
+              >
+                المسيرة السياسية
+              </a>
+            </li>
+            <li class="nav-item-p3">
+              <a
+                href="#initiatives"
+                class="nav-link"
+                onclick="switchPage('initiatives')"
+              >
+                العمل النيابي
+              </a>
+            </li>
+            <li class="nav-item-p4">
+              <a href="#issues" class="nav-link" onclick="switchPage('issues')"
+                >الملفات والقضايا</a
+              >
+            </li>
+            <li class="nav-item-p5">
+              <a
+                href="#community"
+                class="nav-link"
+                onclick="switchPage('community')"
+              >
+                عجلون
+              </a>
+            </li>
+            <li class="nav-item-p6">
+              <a href="#youth" class="nav-link" onclick="switchPage('youth')"
+                >الشباب والعمل</a
+              >
+            </li>
+            <li class="nav-item-p7">
+              <a href="#news" class="nav-link" onclick="switchPage('news')"
+                >الأخبار والفعاليات</a
+              >
+            </li>
+            <li class="nav-item-p8">
+              <a
+                href="#articles"
+                class="nav-link"
+                onclick="switchPage('articles')"
+                >المقالات</a
+              >
+            </li>
+            <li class="nav-item-p9">
+              <a
+                href="#achievements"
+                class="nav-link"
+                onclick="switchPage('achievements')"
+                >حصاد نيابي
+              </a>
+            </li>
+            <li class="nav-item-p9">
+              <a
+                href="#gallery"
+                class="nav-link"
+                onclick="switchPage('gallery')"
+              >
+                معرض الصور
+              </a>
+            </li>
+
+            <li class="nav-dropdown" id="nav-dropdown-more">
+              <a
+                href="javascript:void(0)"
+                class="nav-link dropdown-toggle"
+                id="dropdown-more-btn"
+                onclick="toggleMoreDropdown(event)"
+              >
+                المزيد <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+              </a>
+              <ul class="dropdown-menu" id="dropdown-more-menu">
+                <li class="drop-item-p2">
+                  <a
+                    href="#journey"
+                    class="dropdown-item"
+                    onclick="switchPage('journey')"
+                    ><i class="fa-solid fa-compass"></i> المسيرة</a
+                  >
+                </li>
+                <li class="drop-item-p3">
+                  <a
+                    href="#initiatives"
+                    class="dropdown-item"
+                    onclick="switchPage('initiatives')"
+                    ><i class="fa-solid fa-folder-open"></i> الأعمال
+                    والمبادرات</a
+                  >
+                </li>
+                <li class="drop-item-p4">
+                  <a
+                    href="#issues"
+                    class="dropdown-item"
+                    onclick="switchPage('issues')"
+                    ><i class="fa-solid fa-briefcase"></i> الملفات والقضايا</a
+                  >
+                </li>
+                <li class="drop-item-p5">
+                  <a
+                    href="#community"
+                    class="dropdown-item"
+                    onclick="switchPage('community')"
+                    ><i class="fa-solid fa-people-roof"></i> المجتمع المحلي</a
+                  >
+                </li>
+                <li class="drop-item-p6">
+                  <a
+                    href="#youth"
+                    class="dropdown-item"
+                    onclick="switchPage('youth')"
+                    ><i class="fa-solid fa-user-graduate"></i> الشباب والعمل</a
+                  >
+                </li>
+                <li class="drop-item-p7">
+                  <a
+                    href="#news"
+                    class="dropdown-item"
+                    onclick="switchPage('news')"
+                    ><i class="fa-solid fa-newspaper"></i> الأخبار والفعاليات</a
+                  >
+                </li>
+                <li class="drop-item-p8">
+                  <a
+                    href="#articles"
+                    class="dropdown-item"
+                    onclick="switchPage('articles')"
+                    ><i class="fa-solid fa-pen-nib"></i> المقالات والرؤى</a
+                  >
+                </li>
+                <li class="drop-item-p9">
+                  <a
+                    href="#achievements"
+                    class="dropdown-item"
+                    onclick="switchPage('achievements')"
+                    ><i class="fa-solid fa-trophy"></i> سجل الإنجازات</a
+                  >
+                </li>
+                <li class="drop-item-p9">
+                  <a
+                    href="#gallery"
+                    class="dropdown-item"
+                    onclick="switchPage('gallery')"
+                    ><i class="fa-solid fa-images"></i> معرض الصور</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a
+            href="#contact"
+            class="btn btn-accent"
+            onclick="switchPage('contact')"
+          >
+            <i class="fa-solid fa-paper-plane"></i> تواصل معنا
+          </a>
+          <div class="mobile-toggle" id="mobile-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINERS (SPA Sections) -->
+
+    <!-- ==================== 1. الصفحة الرئيسية ==================== -->
+    <section id="section-home" class="page-section active">
+      <!-- Hero Banner -->
+      <div class="hero-wrapper">
+        <div class="hero-container">
+          <div class="hero-content">
+            <span class="hero-tag"
+              ><i class="fa-solid fa-hands-holding-circle"></i> العمل العام
+              والتنمية</span
+            >
+            <h1 class="hero-title" id="hero-name" style="font-size: 50px">
+              اسم الشخص
+            </h1>
+            <br />
+            <h2 class="hero-subtitle" id="hero-title-sub">
+              شخصية مهتمة بالشأن العام والتنمية والمجتمع
+            </h2>
+            <p class="hero-description" id="hero-bio">
+              شخصية تهتم بالقضايا المجتمعية والتنموية، وتسعى إلى المشاركة في
+              المبادرات والأنشطة التي تساهم في خلق أثر إيجابي، وتعزيز التواصل،
+              ودعم الأفكار والمشاريع التي تخدم المجتمع.
+            </p>
+            <div class="hero-buttons">
+              <a
+                href="#initiatives"
+                class="btn btn-accent"
+                onclick="switchPage('initiatives')"
+              >
+                <i class="fa-solid fa-folder-open"></i> الأعمال والمبادرات
+              </a>
+              <a
+                href="#contact"
+                class="btn btn-outline"
+                onclick="switchPage('contact')"
+              >
+                <i class="fa-solid fa-envelope"></i> تواصل معنا
+              </a>
+            </div>
+          </div>
+
+<div class="hero-card">
+                    <img src="" alt="صورة الشخصية"
+                        class="hero-avatar" id="hero-avatar-img">
+                    <h3 id="hero-card-name" class="hero-card-title">آية الله محمد علي الفريحات</h3>
+                    <p class="hero-card-motto-text" id="hero-card-motto">يستمع... يتابع... ويعمل</p>
+                    <div class="hero-quote-box">
+                        <i class="fa-solid fa-quote-right hero-quote-icon"></i>
+                        <span id="hero-quote-text">"الأثر الحقيقي يبدأ بالاستماع، والفهم، والعمل المستمر، وتحويل الأفكار
+                            إلى خطوات ومبادرات قابلة للتنفيذ."</span>
+                    </div>
+                </div>
+        </div>
+      </div>
+
+      <!-- Stats Bar (بالأرقام) -->
+      <div class="stats-bar" id="stats-bar-container">
+        <!-- Rendered dynamically from SQL DB -->
+      </div>
+
+      <!-- Core Domains (المجالات الرئيسية - 6 بطاقات) -->
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">مجالات الاهتمام والعمل</span>
+          <h2 class="section-title">المجالات الرئيسية للتركيز والتأثير</h2>
+          <p class="section-desc">
+            من خلال العمل الميداني واللقاءات والمبادرات المختلفة، نركز على
+            مجموعة من القضايا التي تمس حياة الأفراد والمجتمع.
+          </p>
+        </div>
+
+        <div class="domains-grid">
+          <div class="domain-card" onclick="switchPage('youth')">
+            <div class="domain-icon">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3 class="domain-title">الشباب وفرص العمل</h3>
+            <p class="domain-desc">
+              دعم الأفكار والمبادرات التي تساعد الشباب على تطوير مهاراتهم
+              والوصول إلى فرص أفضل في سوق العمل.
+            </p>
+          </div>
+          <div class="domain-card" onclick="switchPage('issues')">
+            <div class="domain-icon">
+              <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+            <h3 class="domain-title">التعليم والتطوير</h3>
+            <p class="domain-desc">
+              الاهتمام بالتعليم والتدريب وتطوير المهارات وربط المعرفة التطبيقية
+              باحتياجات المستقبل.
+            </p>
+          </div>
+          <div class="domain-card" onclick="switchPage('issues')">
+            <div class="domain-icon"><i class="fa-solid fa-tree"></i></div>
+            <h3 class="domain-title">التنمية والمستقبل</h3>
+            <p class="domain-desc">
+              دعم المشاريع والمبادرات التي تساهم في تحسين البيئة والخدمات وتعزيز
+              فرص التنمية المستدامة.
+            </p>
+          </div>
+          <div class="domain-card" onclick="switchPage('issues')">
+            <div class="domain-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="domain-title">الاقتصاد والاستثمار</h3>
+            <p class="domain-desc">
+              الاهتمام بالمشاريع والأفكار التي تساهم في دعم الاقتصاد المحلي
+              وتشجيع الإنتاج والمشاريع الصغرى.
+            </p>
+          </div>
+          <div class="domain-card" onclick="switchPage('community')">
+            <div class="domain-icon">
+              <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <h3 class="domain-title">المجتمع المحلي</h3>
+            <p class="domain-desc">
+              الاهتمام باحتياجات المجتمع ودعم الأفكار والمشاريع التي يمكن أن
+              تحقق أثراً إيجابياً وملموساً.
+            </p>
+          </div>
+          <div class="domain-card" onclick="switchPage('initiatives')">
+            <div class="domain-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3 class="domain-title">المبادرات التنموية</h3>
+            <p class="domain-desc">
+              إطلاق ومتابعة المبادرات الميدانية وتحويل التحديات والاحتياجات إلى
+              خطوات عمل قابلة للإنجاز.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Latest News & Initiatives Preview -->
+      <div class="container container-bg-alt">
+        <div class="section-header">
+          <span class="section-tag">أحدث المستجدات</span>
+          <h2 class="section-title">آخر الأخبار والأنشطة والمبادرات</h2>
+          <p class="section-desc">
+            تابع أحدث الفعاليات واللقاءات الحوارية والمشاركات المجتمعية الموثقة
+            من قاعدة البيانات.
+          </p>
+        </div>
+        <div class="news-grid" id="home-news-container">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 2. صفحة «عن الشخص» ==================== -->
+    <section id="section-about" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">نبذة وتوجهات</span>
+          <h2 class="section-title">عن النائب</h2>
+        </div>
+        <div class="about-grid-2">
+          <div>
+            <h3 class="about-heading" id="about-page-name">اسم الشخص</h3>
+            <p class="about-lead">
+              المحامي آية الله محمد علي الفريحات نائب عن محافظة عجلون في مجلس
+              النواب الأردني العشرين. يمارس عمله النيابي من خلال المشاركة في
+              العملية التشريعية والرقابية، والعمل ضمن اللجان النيابية، ومتابعة
+              القضايا التي تمس المواطنين والمجتمعات المحلية، إلى جانب المشاركة
+              في النقاشات المتعلقة بالاقتصاد والتنمية والتعليم وفرص العمل.
+            </p>
+            <div class="domain-card mb-1-5">
+              <h4 class="heading-primary-sm">
+                <i class="fa-solid fa-bullseye"></i> العمل النيابي
+              </h4>
+              <p>
+                يشارك النائب آية الله فريحات في أعمال مجلس النواب العشرين، وقد
+                شارك في الدورة العادية الأولى ضمن اللجنة القانونية، وفي الدورة
+                العادية الثانية ضمن اللجنة القانونية واللجنة الإدارية. كما انتقل
+                خلال الدورة الثانية من صفة النواب المستقلين إلى عضوية كتلة اتحاد
+                الأحزاب الوسطية والوطني الإسلامي، وفق السجل الرسمي لمجلس النواب.
+              </p>
+            </div>
+            <div class="domain-card">
+              <h4 class="heading-primary-sm">
+                <i class="fa-solid fa-heart-pulse"></i> تمثيل عجلون
+              </h4>
+              <p>
+                يمثل النائب محافظة عجلون في مجلس النواب، ويولي القضايا المرتبطة
+                بالمحافظة اهتمامًا ضمن نشاطه النيابي والميداني، خصوصًا ما يتعلق
+                بالتنمية والاستثمار والبنية التحتية والسياحة والزراعة وفرص
+                العمل.
+              </p>
+            </div>
+          </div>
+          <div class="about-principle-card">
+            <i class="fa-solid fa-quote-right quote-icon-lg"></i>
+            <h4 class="gold-subtitle">مبدأ العمل</h4>
+            <p class="about-principle-quote" id="about-work-principle">
+              العمل النيابي مسؤولية تقوم على الاستماع، والمتابعة، والرقابة،
+              والسعي إلى تحويل احتياجات المواطنين إلى قضايا مطروحة على طاولة
+              القرار
+            </p>
+            <hr class="hr-light" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. صفحة «المسيرة» ==================== -->
+    <section id="section-journey" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">محطات وتجربة</span>
+          <h2 class="section-title">من العمل القانوني إلى العمل النيابي</h2>
+          <p class="section-desc">
+            شكّل العمل القانوني قاعدة مهنية لانخراط آية الله فريحات في الشأن
+            العام، قبل أن ينتقل إلى العمل النيابي ممثلًا لمحافظة عجلون في مجلس
+            النواب الأردني العشرين.
+          </p>
+        </div>
+
+        <div class="journey-timeline">
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">انتخابات 2024</h3>
+              <p>
+                خاض آية الله فريحات الانتخابات النيابية لعام 2024 ضمن قائمة أهل
+                العزم عن محافظة عجلون، ونجح في الوصول إلى مجلس النواب بعد حصوله
+                على 8,433 صوتًا. وقد شكل فوزه محطة رئيسية في مسيرته السياسية،
+                وانتقل من العمل العام والقانوني إلى موقع المسؤولية البرلمانية
+                المباشرة.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">داخل مجلس النواب</h3>
+              <p>
+                منذ دخوله مجلس النواب، شارك في أعمال اللجان والنقاشات التشريعية
+                والرقابية، وركز في عدد من مداخلاته ومواقفه على القضايا
+                الاقتصادية والتنموية والاجتماعية.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">مسؤولية تتجاوز الانتخابات</h3>
+              <p>
+                ينظر العمل النيابي إلى ما بعد يوم الاقتراع؛ فالمسؤولية الأساسية
+                تبدأ مع تمثيل المواطنين داخل المجلس، ومتابعة قضاياهم، وممارسة
+                الدور التشريعي والرقابي، والتواصل المستمر مع المجتمع المحلي.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">
+                الترشح لمنصب النائب الأول لرئيس مجلس النواب
+              </h3>
+              <p>
+                في 26 تشرين الأول 2025، ترشح آية الله فريحات لمنصب النائب الأول
+                لرئيس مجلس النواب، وحصل على 55 صوتًا مقابل 67 صوتًا للنائب خميس
+                عطية. ويعكس هذا الترشح حضوره داخل المجلس وسعيه للمشاركة في مواقع
+                المسؤولية البرلمانية.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-icon"><i class="fa-solid fa-compass"></i></div>
+            <div class="timeline-content timeline-content-gold">
+              <h3 class="timeline-title">المرحلة المقبلة</h3>
+              <p>
+                يستمر العمل النيابي على أساس تطوير أدوات التشريع والرقابة،
+                وتعزيز التواصل مع المواطنين، وتحويل القضايا المحلية والوطنية إلى
+                ملفات قابلة للمتابعة داخل مجلس النواب. نتيجة انتخابات منصب
+                النائب الأول موثقة من وكالة الأنباء الأردنية: 67 صوتًا لخميس
+                عطية مقابل 55 لآية الله فريحات.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. صفحة «الأعمال والمبادرات» ==================== -->
+    <section id="section-initiatives" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">العمل النيابي</span>
+          <h2 class="section-title">العمل النيابي</h2>
+          <p class="section-desc">
+            حضور نيابي يقوم على التشريع والرقابة والمتابعة يمارس النائب آية الله
+            فريحات دوره داخل مجلس النواب من خلال ثلاثة مسارات رئيسية:
+          </p>
+        </div>
+
+        <!-- Tracks -->
+        <div class="grid-3-cols">
+          <div class="domain-card text-center">
+            <div class="domain-icon icon-centered">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <h3>أولاً:التشريع</h3>
+            <p class="text-sm-secondary">
+              المشاركة في مناقشة القوانين والتشريعات ودراسة آثارها على المواطنين
+              والاقتصاد والمجتمع، من خلال أعمال اللجان والجلسات النيابية.
+            </p>
+          </div>
+          <div class="domain-card text-center">
+            <div class="domain-icon icon-centered">
+              <i class="fa-solid fa-diagram-next"></i>
+            </div>
+            <h3>ثانيًا: الرقابة</h3>
+            <p class="text-sm-secondary">
+              استخدام الأدوات الرقابية المتاحة للنائب لمساءلة الحكومة ومتابعة
+              القضايا العامة، وطرح الأسئلة والاستفسارات المتعلقة بأداء المؤسسات
+              والسياسات العامة.
+            </p>
+          </div>
+          <div class="domain-card text-center">
+            <div class="domain-icon icon-centered">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3>ثالثًا: تمثيل المواطنين</h3>
+            <p class="text-sm-secondary">
+              نقل القضايا والمطالب التي يواجهها المواطنون إلى مجلس النواب
+              ومتابعتها مع الجهات المختصة.
+            </p>
+          </div>
+        </div>
+
+        <div class="news-grid" id="initiatives-list-container">
+          <!-- Rendered dynamically from SQL DB -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. صفحة «الملفات والقضايا» ==================== -->
+    <section id="section-issues" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">الملفات والمتابعات</span>
+          <h2 class="section-title">الملفات والقضايا المجتمعية</h2>
+          <p class="section-desc">
+            قضايا تهم المجتمع... وأفكار تستحق الاهتمام والعمل الجاد لبناء مستقبل
+            أفضل.
+          </p>
+        </div>
+
+        <div class="domains-grid">
+          <div class="domain-card">
+            <div class="domain-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3 class="domain-title">الشباب وفرص العمل</h3>
+            <p class="domain-desc">
+              يمثل ملف البطالة والتشغيل أحد الملفات الأساسية في الخطاب العام
+              للنائب. ويرى آية الله فريحات أن معالجة البطالة تتطلب الانتقال من
+              الحلول المؤقتة إلى سياسات قادرة على خلق فرص عمل مستدامة، وربط
+              التعليم والتدريب باحتياجات سوق العمل، وتوجيه الاستثمار نحو
+              القطاعات القادرة على توفير وظائف حقيقية.
+            </p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon"><i class="fa-solid fa-coins"></i></div>
+            <h3 class="domain-title">الاقتصاد والاستثمار</h3>
+            <p class="domain-desc">
+              التركيز على تعزيز الاستثمار والإنتاج، ودعم القطاع الخاص، وتطوير
+              القطاعات القادرة على خلق فرص العمل وزيادة القيمة الاقتصادية.
+            </p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon"><i class="fa-solid fa-book"></i></div>
+            <h3 class="domain-title">التعليم وسوق العمل</h3>
+            <p class="domain-desc">
+              متابعة الفجوة بين مخرجات التعليم واحتياجات سوق العمل، وتعزيز
+              التعليم والتدريب المهني والتقني بما يرفع قدرة الشباب على الدخول
+              إلى سوق العمل.
+            </p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <h3 class="domain-title">التنمية المحلية</h3>
+            <p class="domain-desc">
+              تعزيز دور المحافظات في التنمية، ودعم المشاريع التي تسهم في خلق فرص
+              اقتصادية محلية وتحسين مستوى الخدمات والبنية التحتية.
+            </p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon">
+              <i class="fa-solid fa-house-user"></i>
+            </div>
+            <h3 class="domain-title">عجلون</h3>
+            <p class="domain-desc">
+              الاهتمام بالمقومات السياحية والزراعية والبيئية للمحافظة، وتحسين
+              البنية التحتية، وتشجيع الاستثمار والمشاريع الصغيرة والمتوسطة.
+            </p>
+          </div>
+          <div class="domain-card">
+            <div class="domain-icon"><i class="fa-solid fa-users"></i></div>
+            <h3 class="domain-title">المشاركة المجتمعية</h3>
+            <p class="domain-desc">
+              تعزيز التواصل بين المواطن والنائب، وفتح مساحات للحوار والاستماع
+              إلى احتياجات الشباب والمجتمع المحلي. في مقاله المنشور في آب 2026،
+              ركز فريحات على البطالة باعتبارها مشكلة بنيوية، وعلى ربط التعليم
+              والتدريب بسوق العمل، وتحفيز المنشآت على خلق وظائف مستقرة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. صفحة «المجتمع المحلي» ==================== -->
+    <section id="section-community" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"> عجلون</span>
+          <h2 class="section-title">عجلون... إمكانات تحتاج إلى استثمار</h2>
+          <p class="section-desc">
+            تمتلك محافظة عجلون مقومات سياحية وزراعية وبيئية مميزة، وتشكل هذه
+            المقومات أساسًا مهمًا لبناء اقتصاد محلي أكثر قدرة على خلق فرص العمل
+            وتحقيق التنمية
+          </p>
+        </div>
+
+        <h3 class="priorities-title">أولويات العمل من أجل عجلون</h3>
+        <div class="domains-grid">
+          <div class="domain-card">
+            <h4 class="card-title-primary">
+              <i class="fa-solid fa-chart-pie"></i> السياحة
+            </h4>
+            <p>
+              تطوير المنتج السياحي في المحافظة، وإطالة مدة إقامة الزائر، وربط
+              المواقع السياحية بالمشاريع والخدمات المحلية.
+            </p>
+          </div>
+          <div class="domain-card">
+            <h4 class="card-title-primary">
+              <i class="fa-solid fa-shop"></i> الزراعة
+            </h4>
+            <p>
+              دعم القطاع الزراعي وتحسين قدرة المنتجات المحلية على الوصول إلى
+              الأسواق.
+            </p>
+          </div>
+          <div class="domain-card">
+            <h4 class="card-title-primary">
+              <i class="fa-solid fa-laptop-code"></i> الاستثمار
+            </h4>
+            <p>
+              توفير بيئة أفضل للمشاريع الصغيرة والمتوسطة وتشجيع الاستثمارات التي
+              تحقق قيمة مضافة للمحافظة.
+            </p>
+          </div>
+          <div class="domain-card">
+            <h4 class="card-title-primary">
+              <i class="fa-solid fa-vault"></i> البنية التحتية
+            </h4>
+            <p>
+              متابعة احتياجات الطرق والبنية التحتية والخدمات الأساسية التي تشكل
+              عنصرًا مهمًا في التنمية والاستثمار
+            </p>
+          </div>
+          <div class="domain-card">
+            <h4 class="card-title-primary">
+              <i class="fa-solid fa-hands-clapping"></i> الشباب
+            </h4>
+            <p>
+              ربط التنمية المحلية بخلق فرص عمل حقيقية للشباب والحد من الهجرة
+              بحثًا عن فرص اقتصادية خارج المحافظة.
+            </p>
+          </div>
+          <div class="domain-card">
+            <h4 class="card-title-primary">
+              <i class="fa-solid fa-comments"></i> الحوار مع أبناء المحافظة
+            </h4>
+            <p>
+              يمثل التواصل المباشر مع المواطنين والشباب والفعاليات الاقتصادية
+              والمجتمعية جزءًا أساسيًا من متابعة احتياجات عجلون. وقد شهد عام
+              2025 طرح مبادرة لعقد لقاءات شهرية مع الشباب والفعاليات المجتمعية
+              لمناقشة احتياجات المحافظة وقضاياها.
+            </p>
+          </div>
+        </div>
+
+        <div class="gold-banner">
+          <h3 class="gold-banner-title">الهدف الرائد</h3>
+          <p class="gold-banner-desc">
+            أن تتحول إمكانات عجلون السياحية والزراعية والبيئية إلى فرص اقتصادية
+            حقيقية يستفيد منها أبناء المحافظة. وكالة الأنباء الأردنية نقلت عن
+            فريحات تأكيده أهمية تطوير البنية التحتية في عجلون وتوسيع المشاريع
+            الصغيرة والمتوسطة والاستفادة من المقومات السياحية والزراعية
+            والبيئية.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. صفحة «الشباب وفرص العمل» ==================== -->
+    <section id="section-youth" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">تمكين الشباب</span>
+          <h2 class="section-title">
+            الشباب ليسوا مشكلة... بل فرصة الأردن الأكبر
+          </h2>
+          <p class="section-desc">
+            يحتل ملف الشباب وفرص العمل مساحة مهمة في رؤية النائب آية الله فريحات
+            للقضايا الاقتصادية والاجتماعية.
+          </p>
+        </div>
+
+        <div class="flowchart-container">
+          <div class="flow-step">
+            <i class="fa-solid fa-school"></i> التعليم
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="flow-step"><i class="fa-solid fa-gears"></i> التدريب</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="flow-step">
+            <i class="fa-solid fa-award"></i> المهارات
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="flow-step">
+            <i class="fa-solid fa-user-check"></i> سوق العمل
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="flow-step flow-step-gold">
+            <i class="fa-solid fa-star"></i> الوظيفة
+          </div>
+        </div>
+
+        <div class="grid-2-cols-mt">
+          <div class="domain-card">
+            <h3 class="dark-heading-sm">
+              <i class="fa-solid fa-triangle-exclamation"></i> البطالة ليست مجرد
+              رقم
+            </h3>
+            <p>
+              يرى فريحات أن البطالة في الأردن أصبحت قضية بنيوية تحتاج إلى معالجة
+              تتجاوز البرامج المؤقتة، من خلال بناء سياسة تشغيل وطنية مرتبطة
+              بحاجات الاقتصاد الفعلية.
+            </p>
+          </div>
+          <div class="domain-card">
+            <h3 class="dark-heading-sm">
+              <i class="fa-solid fa-person-circle-check"></i> الاستثمار في
+              الإنسان
+            </h3>
+            <p>
+              الشباب الأردني يمتلك المعرفة والطاقة والطموح، لكن التحدي يكمن في
+              توفير البيئة الاقتصادية التي تسمح بتحويل هذه الطاقات إلى إنتاج
+              وفرص عمل.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2-cols-mt">
+          <div class="domain-card">
+            <h3 class="dark-heading-sm">
+              <i class="fa-solid fa-triangle-exclamation"></i> الحوار مع الشباب
+            </h3>
+            <p>
+              لا يمكن بناء سياسات شبابية فعالة دون الاستماع إلى الشباب أنفسهم،
+              ومعرفة التحديات التي تواجههم في التعليم والعمل وريادة الأعمال
+              والمشاركة العامة.
+            </p>
+          </div>
+          <div class="domain-card">
+            <h3 class="dark-heading-sm">الهدف</h3>
+            <p>
+              اقتصاد قادر على خلق وظائف حقيقية ومستدامة، وشباب يمتلك المهارات
+              والفرص التي تمكنه من بناء مستقبله داخل الأردن. هذا يتسق مع المقال
+              المنشور باسم فريحات في 27 آب 2026 حول البطالة والتحديث الاقتصادي.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. صفحة «المقالات» ==================== -->
+    <section id="section-articles" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">رؤية وأفكار</span>
+          <h2 class="section-title">المقالات والرؤى التنموية</h2>
+          <p class="section-desc">
+            مواضيع ونقاشات تناقش أهمية المبادرات ودور المعرفة والعمل المستمر.
+          </p>
+        </div>
+
+        <div class="news-grid" id="articles-list-container">
+          <!-- Rendered dynamically from SQL DB -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. صفحة «الأخبار والفعاليات» ==================== -->
+    <section id="section-news" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">التغطية والتوثيق</span>
+          <h2 class="section-title">الأخبار والفعاليات</h2>
+          <p class="section-desc">
+            متابعة مستمرة للأنشطة واللقاءات والمشاركات الميدانية.
+          </p>
+        </div>
+
+        <div class="news-grid" id="news-page-container">
+          <!-- Rendered dynamically from SQL DB -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 10. صفحة «الإنجازات» ==================== -->
+    <section id="section-achievements" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">سجل رقمي موثق</span>
+          <h2 class="section-title">سجل الإنجازات والشفافية</h2>
+          <p class="section-desc">
+            لا يقتصر تقييم العمل على العناوين، وإنما على ما يتم تنفيذه ومتابعة
+            تطويره مع مرور الوقت.
+          </p>
+        </div>
+
+        <div class="news-grid" id="achievements-list-container">
+          <!-- Rendered dynamically from SQL DB -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 11. صفحة «معرض الصور» ==================== -->
+    <section id="section-gallery" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">التوثيق البصري</span>
+          <h2 class="section-title">معرض الصور والفعاليات</h2>
+          <p class="section-desc">
+            صور ومقتطفات من الأنشطة واللقاءات والمبادرات والزيارات الميدانية.
+          </p>
+        </div>
+
+        <div class="gallery-filters" id="gallery-category-filters">
+          <button
+            class="filter-btn active"
+            title="الكل"
+            onclick="filterGallery('الكل')"
+          >
+            الكل
+          </button>
+          <button
+            class="filter-btn"
+            title="اللقاءات"
+            onclick="filterGallery('اللقاءات')"
+          >
+            اللقاءات
+          </button>
+          <button
+            class="filter-btn"
+            title="الفعاليات"
+            onclick="filterGallery('الفعاليات')"
+          >
+            الفعاليات
+          </button>
+          <button
+            class="filter-btn"
+            title="المبادرات"
+            onclick="filterGallery('المبادرات')"
+          >
+            المبادرات
+          </button>
+          <button
+            class="filter-btn"
+            title="المشاريع"
+            onclick="filterGallery('المشاريع')"
+          >
+            المشاريع
+          </button>
+          <button
+            class="filter-btn"
+            title="الزيارات"
+            onclick="filterGallery('الزيارات')"
+          >
+            الزيارات
+          </button>
+          <button
+            class="filter-btn"
+            title="الاجتماعات"
+            onclick="filterGallery('الاجتماعات')"
+          >
+            الاجتماعات
+          </button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-items-container">
+          <!-- Rendered dynamically from SQL DB -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 12. صفحة «تواصل معنا» ==================== -->
+    <section id="section-contact" class="page-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">تواصل مباشر</span>
+          <h2 class="section-title">تواصل معنا: تواصلك مهم</h2>
+          <p class="section-desc">
+            يمثل التواصل وتبادل الأفكار والمقترحات جزءاً مهماً من تطوير
+            المبادرات والمشاريع. إذا كانت لديك فكرة أو مقترح، يمكنك مشاركتنا
+            إياها.
+          </p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info-card">
+            <h3 class="contact-card-title">بيانات التواصل</h3>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <span class="label-accent-light">الهاتف</span>
+                <strong id="contact-info-phone" class="info-strong"
+                  >+962 7 9000 0000</strong
+                >
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <span class="label-accent-light">البريد الإلكتروني</span>
+                <strong id="contact-info-email" class="info-strong"
+                  >contact@example.org</strong
+                >
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <span class="label-accent-light">أوقات التواصل</span>
+                <strong id="contact-info-hours"
+                  >الأحد - الخميس: 9:00 صباحاً - 5:00 مساءً</strong
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3 class="contact-form-title">أرسل رسالتك</h3>
+            <div id="contact-form-alert"></div>
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label for="contact-name" class="form-label"
+                  >الاسم الكامل *</label
+                >
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="contact-name"
+                  class="form-control"
+                  title="الاسم الكامل"
+                  placeholder="أدخل اسمك الكريم"
+                  required
+                />
+              </div>
+              <div class="grid-form-2">
+                <div class="form-group">
+                  <label for="contact-email" class="form-label"
+                    >البريد الإلكتروني *</label
+                  >
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="contact-email"
+                    class="form-control"
+                    title="البريد الإلكتروني"
+                    placeholder="example@domain.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone" class="form-label"
+                    >رقم الهاتف</label
+                  >
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    name="contact-phone"
+                    class="form-control"
+                    title="رقم الهاتف"
+                    placeholder="07XXXXXXXX"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject" class="form-label"
+                  >موضوع الرسالة *</label
+                >
+                <input
+                  type="text"
+                  id="contact-subject"
+                  name="contact-subject"
+                  class="form-control"
+                  title="موضوع الرسالة"
+                  placeholder="مقترح، فكرة، استفسار..."
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="contact-details" class="form-label"
+                  >تفاصيل الرسالة *</label
+                >
+                <textarea
+                  id="contact-details"
+                  name="contact-details"
+                  class="form-control"
+                  title="تفاصيل الرسالة"
+                  placeholder="اكتب التفاصيل والمقترحات هنا..."
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-accent btn-full-padding"
+                title="إرسال الرسالة إلى قاعدة البيانات"
+              >
+                <i class="fa-solid fa-paper-plane"></i> إرسال الرسالة
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal Dialog Viewer (قراءة الأخبار والمقالات) -->
+    <div class="modal-backdrop" id="content-modal">
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          onclick="closeModal()"
+          title="إغلاق النافذة"
+          aria-label="إغلاق النافذة"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="modal-body-container">
+          <!-- Content inserted dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2 id="footer-person-name">اسم الشخص</h2>
+          <p id="footer-person-title">
+            شخصية مهتمة بالشأن العام والتنمية والمجتمع
+          </p>
+          <p class="footer-desc-text">
+            هذا الموقع يمثل منصة لتوثيق ومتابعة العمل النيابي، من المداخلات
+            والمواقف والأسئلة النيابية إلى اللجان والاجتماعات والزيارات
+            والفعاليات المجتمعية.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">روابط سريعة</h4>
+          <ul class="footer-links">
+            <li><a href="#home" onclick="switchPage('home')">الرئيسية</a></li>
+            <li>
+              <a href="#about" onclick="switchPage('about')">عن النائب</a>
+            </li>
+            <li>
+              <a href="#initiatives" onclick="switchPage('initiatives')"
+                >الأعمال والمبادرات</a
+              >
+            </li>
+            <li>
+              <a href="#issues" onclick="switchPage('issues')"
+                >الملفات والقضايا</a
+              >
+            </li>
+            <li>
+              <a href="#news" onclick="switchPage('news')"
+                >الأخبار والفعاليات</a
+              >
+            </li>
+            <li>
+              <a href="#articles" onclick="switchPage('articles')"
+                >المقالات والرؤى</a
+              >
+            </li>
+            <li>
+              <a href="#contact" onclick="switchPage('contact')">تواصل معنا</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">معلومات التواصل</h4>
+          <p class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span id="footer-phone">0795720050</span>
+          </p>
+          <p class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span id="footer-email">Ayatollah.freihat@representatives.jo</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 جميع الحقوق محفوظة — منصة شخصية ومجتمعية واحترافية متكاملة</p>
+      </div>
+    </footer>
+
+    <!-- App Script -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

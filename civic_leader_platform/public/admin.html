@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم الشاملة | إدارة المنصة وقاعدة بيانات SQL</title>
+    <!-- FontAwesome & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body">
+
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-sidebar-header">
+                <h2 class="admin-sidebar-title">
+                    <i class="fa-solid fa-sliders"></i> Dashboard التحكم
+                </h2>
+                <p class="admin-sidebar-subtitle">إدارة المحتوى وتعديل بيانات SQL</p>
+            </div>
+
+            <nav class="admin-nav">
+                <div class="admin-nav-item active" onclick="switchAdminTab('settings')">
+                    <i class="fa-solid fa-gears"></i> الإعدادات العامة
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('stats')">
+                    <i class="fa-solid fa-chart-line"></i> الإحصائيات (بالأرقام)
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('news')">
+                    <i class="fa-solid fa-newspaper"></i> الأخبار والفعاليات
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('initiatives')">
+                    <i class="fa-solid fa-rocket"></i> المبادرات والمشاريع
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('articles')">
+                    <i class="fa-solid fa-feather"></i> المقالات والرؤى
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('gallery')">
+                    <i class="fa-solid fa-images"></i> معرض الصور
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('achievements')">
+                    <i class="fa-solid fa-trophy"></i> سجل الإنجازات
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('messages')">
+                    <i class="fa-solid fa-inbox"></i> الرسائل الواردة
+                </div>
+                <div class="admin-nav-item" onclick="switchAdminTab('sql')">
+                    <i class="fa-solid fa-database"></i> مستكشف SQL Console
+                </div>
+            </nav>
+
+            <div class="admin-sidebar-footer">
+                <a href="index.html" class="btn btn-accent btn-full-width">
+                    <i class="fa-solid fa-globe"></i> العودة للموقع الرئيسي
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Admin Content Area -->
+        <main class="admin-main">
+            <header class="admin-header">
+                <div>
+                    <h1 id="admin-tab-title" class="admin-title">الإعدادات العامة للمنصة</h1>
+                    <p class="admin-subtitle">يمكنك تعديل جميع تفاصيل ومحتويات الموقع وحفظها فورياً في قاعدة البيانات SQL</p>
+                </div>
+                <div>
+                    <span class="admin-status-badge">
+                        <i class="fa-solid fa-database"></i> SQL Connected
+                    </span>
+                </div>
+            </header>
+
+            <div id="admin-alert"></div>
+
+            <!-- Tab 1: Settings -->
+            <section id="admin-tab-settings" class="admin-tab-content active">
+                <div class="admin-card">
+                    <h3 class="admin-card-title">تعديل بيانات الشخصية والموقع الرئيسي</h3>
+                    <form onsubmit="saveSettingsForm(event)">
+                        <div class="admin-form-grid-2">
+                            <div>
+                                <label for="setting-person_name" class="form-label form-label-light">اسم الشخصية</label>
+                                <input type="text" id="setting-person_name" name="setting-person_name" class="form-control" title="اسم الشخصية" placeholder="أدخل اسم الشخصية">
+                            </div>
+                            <div>
+                                <label for="setting-person_title" class="form-label form-label-light">الصفة والعنوان الرئيسي</label>
+                                <input type="text" id="setting-person_title" name="setting-person_title" class="form-control" title="الصفة والعنوان الرئيسي" placeholder="أدخل الصفة والعنوان الرئيسي">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="setting-person_bio" class="form-label form-label-light">النبذة التعريفية الرئيسية (Bio)</label>
+                            <textarea id="setting-person_bio" name="setting-person_bio" class="form-control" title="النبذة التعريفية الرئيسية (Bio)" placeholder="أدخل النبذة التعريفية الرئيسية"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="setting-work_principle" class="form-label form-label-light">مبدأ العمل (الرسالة والمقولة)</label>
+                            <textarea id="setting-work_principle" name="setting-work_principle" class="form-control" title="مبدأ العمل (الرسالة والمقولة)" placeholder="أدخل مبدأ العمل والرسالة"></textarea>
+                        </div>
+
+                        <div class="admin-form-grid-3">
+                            <div>
+                                <label for="setting-contact_phone" class="form-label form-label-light">رقم الهاتف</label>
+                                <input type="text" id="setting-contact_phone" name="setting-contact_phone" class="form-control" title="رقم الهاتف" placeholder="أدخل رقم الهاتف">
+                            </div>
+                            <div>
+                                <label for="setting-contact_email" class="form-label form-label-light">البريد الإلكتروني</label>
+                                <input type="email" id="setting-contact_email" name="setting-contact_email" class="form-control" title="البريد الإلكتروني" placeholder="أدخل البريد الإلكتروني">
+                            </div>
+                            <div>
+                                <label for="setting-contact_hours" class="form-label form-label-light">أوقات التواصل</label>
+                                <input type="text" id="setting-contact_hours" name="setting-contact_hours" class="form-control" title="أوقات التواصل" placeholder="أدخل أوقات التواصل">
+                            </div>
+                        </div>
+
+                        <!-- صورة الشخصية للموقع الرئيسي -->
+                        <div class="form-group admin-image-upload-card">
+                            <label for="setting-person_image" class="form-label form-label-light">
+                                <i class="fa-solid fa-image-portrait text-accent"></i> صورة الشخصية الرئيسية (تظهر في الواجهة الرئيسية لموقع الزوار)
+                            </label>
+                            <div class="admin-image-input-group">
+                                <input type="text" id="setting-person_image" name="setting-person_image" class="form-control" title="صورة الشخصية" placeholder="أدخل رابط الصورة (URL) أو ارفع ملف صورة جديد من جهازك" oninput="updatePersonImagePreview(this.value)">
+                                <label for="upload-person-image-file" class="btn btn-outline admin-upload-btn" title="رفع صورة من الجهاز">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i> رفع ملف صورة
+                                </label>
+                                <input type="file" id="upload-person-image-file" name="upload-person-image-file" accept="image/*" class="admin-hidden-file-input" onchange="handlePersonImageUpload(event)" title="اختر ملف صورة من جهازك">
+                            </div>
+                            <div class="admin-preview-box">
+                                <img id="person-image-preview" class="admin-avatar-preview-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="معاينة صورة الشخصية">
+                                <span class="admin-preview-label"><i class="fa-solid fa-eye"></i> معاينة حية ومباشرة لصورة الشخصية في موقع الزوار</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-accent">
+                            <i class="fa-solid fa-floppy-disk"></i> حفظ كافة الإعدادات في SQL
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Tab 2: Stats (بالأرقام) -->
+            <section id="admin-tab-stats" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title">تعديل الأرقام والإحصائيات الرئيسية ("بالأرقام")</h3>
+                    <div id="admin-stats-list">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tab 3: News -->
+            <section id="admin-tab-news" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title-sm">إضافة خبر / فعالية جديدة</h3>
+                    <form onsubmit="addNewsForm(event)" class="admin-form-grid">
+                        <div class="admin-form-row-2-1">
+                            <input type="text" id="news-title-in" name="news-title-in" class="form-control" title="عنوان النشاط أو الخبر" placeholder="عنوان النشاط أو الخبر" required>
+                            <input type="text" id="news-cat-in" name="news-cat-in" class="form-control" title="التصنيف" placeholder="التصنيف (لقاءات، فعاليات...)" required>
+                        </div>
+                        <input type="text" id="news-snip-in" name="news-snip-in" class="form-control" title="ملخص بسيط" placeholder="ملخص بسيط" required>
+                        <textarea id="news-content-in" name="news-content-in" class="form-control" title="المحتوى الكامل واللقاءات والتفاصيل" placeholder="المحتوى الكامل واللقاءات والتفاصيل..." required></textarea>
+                        <div class="admin-form-row-1-1">
+                            <input type="date" id="news-date-in" name="news-date-in" class="form-control" title="تاريخ الخبر" placeholder="تاريخ الخبر">
+                            <input type="url" id="news-img-in" name="news-img-in" class="form-control" title="رابط صورة غلاف" placeholder="رابط صورة غلاف (Image URL)">
+                        </div>
+                        <button type="submit" class="btn btn-accent"><i class="fa-solid fa-plus"></i> إضافة الخبر إلى SQL</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <h3 class="admin-card-title-white">سجل الأخبار والفعاليات الحالية</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>العنوان</th>
+                                <th>التصنيف</th>
+                                <th>التاريخ</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-news-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tab 4: Initiatives -->
+            <section id="admin-tab-initiatives" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title-sm">إضافة مبادرة / مشروع جديد</h3>
+                    <form onsubmit="addInitiativeForm(event)" class="admin-form-grid">
+                        <div class="admin-form-row-2-1-1">
+                            <input type="text" id="init-title-in" name="init-title-in" class="form-control" title="عنوان المبادرة أو المشروع" placeholder="عنوان المبادرة أو المشروع" required>
+                            <input type="text" id="init-cat-in" name="init-cat-in" class="form-control" title="التصنيف" placeholder="التصنيف (شباب، اقتصاد...)" required>
+                            <select id="init-status-in" name="init-status-in" class="form-control" title="حالة المبادرة">
+                                <option value="قيد التنفيذ">قيد التنفيذ</option>
+                                <option value="مستمر">مستمر</option>
+                                <option value="مكتملة">مكتملة</option>
+                            </select>
+                        </div>
+                        <textarea id="init-desc-in" name="init-desc-in" class="form-control" title="وصف المبادرة أو المشروع والمخرجات المتوقعة" placeholder="وصف المبادرة أو المشروع والمخرجات المتوقعة..." required></textarea>
+                        <input type="url" id="init-img-in" name="init-img-in" class="form-control" title="رابط صورة المبادرة" placeholder="رابط صورة المبادرة (Image URL)">
+                        <button type="submit" class="btn btn-accent"><i class="fa-solid fa-plus"></i> إضافة المبادرة إلى SQL</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <h3 class="admin-card-title-white">سجل المبادرات والمشاريع</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>المبادرة / المشروع</th>
+                                <th>التصنيف</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-initiatives-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tab 5: Articles -->
+            <section id="admin-tab-articles" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title-sm">إضافة مقال أو رؤية تنموية</h3>
+                    <form onsubmit="addArticleForm(event)" class="admin-form-grid">
+                        <div class="admin-form-row-2-1-1">
+                            <input type="text" id="art-title-in" name="art-title-in" class="form-control" title="عنوان المقال" placeholder="عنوان المقال" required>
+                            <input type="text" id="art-cat-in" name="art-cat-in" class="form-control" title="التصنيف" placeholder="التصنيف (أفكار، شباب...)" required>
+                            <input type="text" id="art-time-in" name="art-time-in" class="form-control" title="وقت القراءة" placeholder="وقت القراءة (مثلاً 5 دقائق)">
+                        </div>
+                        <input type="text" id="art-author-in" name="art-author-in" class="form-control" title="الكاتب" placeholder="الكاتب" value="اسم الشخص">
+                        <input type="text" id="art-snip-in" name="art-snip-in" class="form-control" title="ملخص المقال" placeholder="ملخص المقال" required>
+                        <textarea id="art-content-in" name="art-content-in" class="form-control textarea-lg" title="المقال الكامل" placeholder="المقال الكامل..." required></textarea>
+                        <button type="submit" class="btn btn-accent"><i class="fa-solid fa-plus"></i> نشر المقال في SQL</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <h3 class="admin-card-title-white">سجل المقالات المنشورة</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>عنوان المقال</th>
+                                <th>التصنيف</th>
+                                <th>الكاتب</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-articles-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tab 6: Gallery -->
+            <section id="admin-tab-gallery" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title-sm">إضافة صورة لمعرض الصور</h3>
+                    <form onsubmit="addGalleryForm(event)" class="admin-form-row-gallery">
+                        <input type="text" id="gal-title-in" name="gal-title-in" class="form-control" title="عنوان الصورة / الوصف" placeholder="عنوان الصورة / الوصف" required>
+                        <select id="gal-cat-in" name="gal-cat-in" class="form-control" title="تصنيف الصورة">
+                            <option value="اللقاءات">اللقاءات</option>
+                            <option value="الفعاليات">الفعاليات</option>
+                            <option value="المبادرات">المبادرات</option>
+                            <option value="المشاريع">المشاريع</option>
+                            <option value="الزيارات">الزيارات</option>
+                            <option value="الاجتماعات">الاجتماعات</option>
+                        </select>
+                        <input type="url" id="gal-img-in" name="gal-img-in" class="form-control" title="رابط الصورة" placeholder="رابط الصورة (Image URL)" required>
+                        <button type="submit" class="btn btn-accent"><i class="fa-solid fa-plus"></i> حفظ الصورة</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <h3 class="admin-card-title-white">معرض الصور الحالي في قاعدة البيانات</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>معاينة</th>
+                                <th>العنوان</th>
+                                <th>التصنيف</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-gallery-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tab 7: Achievements -->
+            <section id="admin-tab-achievements" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title-sm">إضافة إنجاز رقمي موثق</h3>
+                    <form onsubmit="addAchievementForm(event)" class="admin-form-grid">
+                        <div class="admin-form-row-2-1-1">
+                            <input type="text" id="ach-title-in" name="ach-title-in" class="form-control" title="عنوان الإنجاز" placeholder="عنوان الإنجاز" required>
+                            <input type="text" id="ach-cat-in" name="ach-cat-in" class="form-control" title="التصنيف" placeholder="التصنيف (مبادرات، مشاريع...)" required>
+                            <input type="text" id="ach-year-in" name="ach-year-in" class="form-control" title="السنة" placeholder="السنة (مثلاً 2026)" required>
+                        </div>
+                        <textarea id="ach-desc-in" name="ach-desc-in" class="form-control" title="وصف وتفاصيل الإنجاز" placeholder="وصف وتفاصيل الإنجاز..." required></textarea>
+                        <button type="submit" class="btn btn-accent"><i class="fa-solid fa-plus"></i> إضافة الإنجاز</button>
+                    </form>
+                </div>
+
+                <div class="admin-card">
+                    <h3 class="admin-card-title-white">سجل الإنجازات الموثق</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>العنوان</th>
+                                <th>التصنيف</th>
+                                <th>السنة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-achievements-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tab 8: Messages -->
+            <section id="admin-tab-messages" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title-sm">رسائل وملاحظات ومقترحات المواطنين والمجتمع</h3>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الاسم</th>
+                                <th>البريد والهاتف</th>
+                                <th>الموضوع والتفاصيل</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-messages-tbody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Tab 9: Interactive SQL Console -->
+            <section id="admin-tab-sql" class="admin-tab-content">
+                <div class="admin-card">
+                    <h3 class="admin-card-title-xs"><i class="fa-solid fa-terminal"></i> مستكشف وأداة تنفيذ استعلامات SQL المباشرة</h3>
+                    <p class="admin-subtitle-sql">
+                        يمكنك هنا تنفيذ استعلامات SQL حقيقية على قاعدة بيانات SQLite (`SELECT * FROM settings`, `SELECT * FROM messages`, إلخ).
+                    </p>
+
+                    <div class="mb-1">
+                        <textarea id="sql-query-input" name="sql-query-input" class="sql-terminal" title="أدخل استعلام SQL هنا" placeholder="أدخل استعلام SQL هنا، مثال: SELECT * FROM settings;"></textarea>
+                    </div>
+                    <div class="admin-btn-group">
+                        <button onclick="runAdminSqlQuery()" class="btn btn-accent"><i class="fa-solid fa-play"></i> تنفيذ الاستعلام (Run SQL Query)</button>
+                        <button onclick="presetSqlQuery('SELECT * FROM settings')" class="btn btn-outline">تصفح table: settings</button>
+                        <button onclick="presetSqlQuery('SELECT * FROM news')" class="btn btn-outline">تصفح table: news</button>
+                        <button onclick="presetSqlQuery('SELECT * FROM initiatives')" class="btn btn-outline">تصفح table: initiatives</button>
+                        <button onclick="presetSqlQuery('SELECT * FROM messages')" class="btn btn-outline">تصفح table: messages</button>
+                    </div>
+
+                    <div id="sql-results-container">
+                        <!-- SQL output table -->
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Admin JS Script -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

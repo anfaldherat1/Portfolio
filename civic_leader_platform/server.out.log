@@ -1,0 +1,7 @@
+🔒 (HTTPS) المنصة تعمل بشهادة مشفّرة على: https://localhost:3000
+🌐 صفحة الزائر العامة: https://localhost:3000/index.html
+🔑 لوحة التحكم: https://localhost:3000/admin.html
+🚀 (HTTP)  المنصة تعمل أيضاً على: http://localhost:3001
+🌐 صفحة الزائر العامة: http://localhost:3001/index.html
+🔑 لوحة التحكم: http://localhost:3001/admin.html
+⚡ متصل بقاعدة بيانات SQL بنجاح: C:\Users\Public\project3\civic_leader_platform\db\civic_platform.db
